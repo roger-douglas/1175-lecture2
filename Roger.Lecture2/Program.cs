@@ -47,16 +47,19 @@ namespace Roger.Lecture2
 
         static void Main(string[] args)
         {
-            string input = "1101010010010";
-            byte _base = 2;
+            WriteLine("Enter a base number of your number:");
+            byte _base = Byte.Parse(ReadLine());
+            WriteLine("Enter your number:");
+            string input = ReadLine();
 
             int value = ToDecimal(_base, input);
-            Console.WriteLine(value + " on base " + _base + " is " + input);
-
             string result = ConvertToBase(value, _base);
-            Console.WriteLine(value + " on base " + _base + " is " + result);
 
-            Console.ReadKey();
+            WriteLine("************************************************");
+            WriteLine("{0} in base {1} to decimal is {2}", input, _base, value);
+            WriteLine(value + " on base " + _base + " is " + result);
+
+            ReadKey();
         }
     }
 }
